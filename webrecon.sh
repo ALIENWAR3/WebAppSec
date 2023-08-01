@@ -78,7 +78,7 @@ rm $url/recon/wayback/json1.txt
 rm $url/recon/wayback/php1.txt
 rm $url/recon/wayback/aspx1.txt
 echo "[+] Running eyewitness against all compiled domains..."
-python3 EyeWitness/EyeWitness.py --web -f $url/recon/httprobe/alive.txt -d $url/recon/eyewitness --resolve
+eyewitness --web -f $url/recon/httprobe/alive.txt -d $url/recon/eyewitness --resolve
 
 # echo "[+] Fuzzing alive hosts for directories/files..."
 # for i in `cat $url/recon/alive.txt`; do ffuf -u $i/FUZZ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-small.txt -mc 200,302,401 -se -of html -o dirs.html;done
